@@ -195,6 +195,9 @@ header .header .header__right .header__right__img img {
   }
 }
 
+main .markets__section {
+  margin-bottom: 128px;
+}
 main .markets__section .markets {
   box-shadow: 0px 0px 16px rgba(9, 24, 26, 0.04);
   border-radius: 4px;
@@ -337,185 +340,522 @@ main .markets__section .why__btc__markets .wbm__items .wbm__item p {
     margin-top: 64px;
   }
 }
-main .trade__section h4 {
+main .template__section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 32px;
+  margin-bottom: 128px;
+}
+main .template__section:nth-child(odd) .template__section__cover {
+  order: 1;
+}
+main .template__section:nth-child(odd) .template__section__content {
+  order: 2;
+}
+@media screen and (max-width: 1024px) {
+  main .template__section:nth-child(odd) .template__section__cover {
+    order: 2;
+  }
+  main .template__section:nth-child(odd) .template__section__content {
+    order: 1;
+  }
+}
+main .template__section .template__section__content {
+  flex: 1 1 550px;
+}
+main .template__section .template__section__content h4 {
   font-weight: 400;
   color: #18181B;
   font-size: 16px;
   width: 100%;
+  text-transform: uppercase;
 }
-main .trade__section .trade__section__blocks {
-  display: flex;
-  justify-content: space-between;
-  gap: 32px;
-}
-main .trade__section .trade__section__blocks .trade__section__left {
-  flex: 1 1 550px;
-}
-main .trade__section .trade__section__blocks .trade__section__left h2 {
+main .template__section .template__section__content h2 {
   font-size: min(40px, max(20px + 2vw));
   font-weight: 400;
   color: #18181B;
 }
-main .trade__section .trade__section__blocks .trade__section__left .trade__items {
+main .template__section .template__section__content .template__section__content__items {
   display: flex;
   flex-wrap: wrap;
   margin-top: 64px;
   gap: 32px;
 }
-main .trade__section .trade__section__blocks .trade__section__left .trade__items .trade__item {
+main .template__section .template__section__content .template__section__content__items .template__section__content__item {
   flex: 1 1 33.3333333333%;
 }
-main .trade__section .trade__section__blocks .trade__section__left .trade__items .trade__item h6 {
+main .template__section .template__section__content .template__section__content__items .template__section__content__item h6 {
   font-size: 16px;
   color: #18181B;
   font-weight: 400;
   margin: 8px 0px 18px 0px;
 }
-main .trade__section .trade__section__blocks .trade__section__left .trade__items .trade__item p {
+main .template__section .template__section__content .template__section__content__items .template__section__content__item p {
   color: #27272A;
   font-size: 15px;
   line-height: 24px;
 }
-main .trade__section .trade__section__blocks .trade__section__right {
+main .template__section .template__section__cover {
   flex: 1 1 550px;
 }
-main .trade__section .trade__section__blocks .trade__section__right .trade__section__right__img img {
+main .template__section .template__section__cover img {
+  display: block;
   width: 100%;
 }
 @media screen and (max-width: 1024px) {
-  main .trade__section .trade__section__blocks {
+  main .template__section {
     flex-wrap: wrap;
+  }
+  main .template__section .template__section__cover img {
+    max-width: 600px;
+    margin: 0 auto;
   }
 }
 @media screen and (max-width: 580px) {
-  main .trade__section .trade__section__blocks .trade__section__left h2 {
+  main .template__section .template__section__content h2 {
     text-align: center;
   }
-  main .trade__section .trade__section__blocks .trade__section__left .trade__items .trade__item {
-    flex: 1 1 100%;
-    text-align: center;
-  }
-}
-main .wallet__section {
-  margin-top: 222px;
-  margin-bottom: 190px;
-}
-main .wallet__section h4 {
-  font-weight: 400;
-  font-size: 16px;
-  color: #18181B;
-  width: 100%;
-  text-align: center;
-}
-main .wallet__section .wallet__section__blocks {
-  display: flex;
-  justify-content: space-between;
-  gap: 32px;
-}
-main .wallet__section .wallet__section__blocks .wallet__section__left {
-  flex: 1 1 1400px;
-}
-main .wallet__section .wallet__section__blocks .wallet__section__left .wallet__section__left__img img {
-  width: 100%;
-}
-main .wallet__section .wallet__section__blocks .wallet__section__right h2 {
-  font-size: min(40px, max(20px + 2vw));
-  font-weight: 400;
-  color: #18181B;
-  margin: 0;
-}
-main .wallet__section .wallet__section__blocks .wallet__section__right .wallet__items {
-  margin-top: 68px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 32px;
-}
-main .wallet__section .wallet__section__blocks .wallet__section__right .wallet__items .wallet__item {
-  flex: 1 1 33.3333333333%;
-}
-main .wallet__section .wallet__section__blocks .wallet__section__right .wallet__items .wallet__item h6 {
-  font-size: 16px;
-  color: #18181B;
-  font-weight: 400;
-  margin: 8px 0px 18px 0px;
-}
-main .wallet__section .wallet__section__blocks .wallet__section__right .wallet__items .wallet__item p {
-  color: #27272A;
-  font-size: 15px;
-  line-height: 24px;
-}
-@media screen and (max-width: 1024px) {
-  main .wallet__section .wallet__section__blocks {
-    flex-wrap: wrap;
-  }
-}
-@media screen and (max-width: 580px) {
-  main .wallet__section .wallet__section__blocks .wallet__section__right h2 {
-    text-align: center;
-  }
-  main .wallet__section .wallet__section__blocks .wallet__section__right .wallet__items .wallet__item {
+  main .template__section .template__section__content .template__section__content__items .template__section__content__item {
     flex: 1 1 100%;
     text-align: center;
   }
 }
 main .vip__program__section {
-  display: flex;
-  flex-direction: column;
-  padding: 128px 0;
-  background: #FAFAFA;
+  padding-top: 128px;
+  background-color: #fafafa;
 }
-main .vip__program__section h6 {
+main .vip__program__section .container .vip__program__content {
+  max-width: 710px;
+  margin: 0 auto;
   text-align: center;
-  font-weight: 400;
-  font-size: 15px;
   color: #18181B;
+}
+main .vip__program__section .container .vip__program__content h4 {
+  font-size: 16px;
+  font-weight: 400;
   margin: 0;
 }
-main .vip__program__section h2 {
-  font-size: min(40px, max(20px + 2vw));
-  color: #18181B;
+main .vip__program__section .container .vip__program__content h2 {
   font-weight: 400;
+  font-size: min(40px, max(20px + 2vw));
   letter-spacing: 0.1px;
-  text-align: center;
-  margin-bottom: 32px;
+  margin: 16px 0px 32px 0px;
 }
-main .vip__program__section p {
-  text-align: center;
+main .vip__program__section .container .vip__program__content p {
+  color: #27272A;
+  line-height: 24px;
+  letter-spacing: 0.2px;
+  margin-bottom: 48px;
 }
-main .vip__program__section .vip__program__section__items {
-  margin: 48px 0px 90px 0px;
+main .vip__program__section .container .vip__program__content .vip__program__items {
   display: flex;
   justify-content: center;
-  gap: 80px;
-}
-main .vip__program__section .vip__program__section__items .vip__program__section__item {
-  display: flex;
-  gap: 12px;
   align-items: center;
+  gap: 64px;
+  margin-bottom: 64px;
 }
-main .vip__program__section .vip__program__section__items .vip__program__section__item p {
+main .vip__program__section .container .vip__program__content .vip__program__items .vip__program__item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+main .vip__program__section .container .vip__program__content .vip__program__items .vip__program__item h6 {
+  font-weight: 400;
+  font-size: 16px;
+  text-transform: capitalize;
   margin: 0;
 }
-main .vip__program__section a {
+@media screen and (max-width: 768px) {
+  main .vip__program__section .container .vip__program__content .vip__program__items {
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 580px) {
+  main .vip__program__section .container .vip__program__content .vip__program__items {
+    gap: 32px;
+  }
+}
+@media screen and (max-width: 380px) {
+  main .vip__program__section .container .vip__program__content .vip__program__items .vip__program__item {
+    gap: 4px;
+  }
+  main .vip__program__section .container .vip__program__content .vip__program__items .vip__program__item h6 {
+    font-size: 15px;
+  }
+}
+main .vip__program__section .container .vip__program__content a {
   display: block;
+  text-decoration: none;
+  padding: 9px 36px;
   color: #18181B;
   border: 1px solid #18181B;
-  padding: 9px 32px;
   border-radius: 4px;
-  text-decoration: none;
-  font-size: 16px;
-  text-align: center;
-  background: transparent;
+  width: fit-content;
+  margin: 0px auto 64px auto;
 }
-main .vip__program__section .vip__program__section__img {
-  margin-top: 64px;
-}
-main .vip__program__section .vip__program__section__img img {
+main .vip__program__section .container .vip__program__cover img {
+  display: block;
   width: 100%;
 }
 @media screen and (max-width: 768px) {
-  main .vip__program__section .vip__program__section__items {
+  main .vip__program__section {
+    padding-top: 64px;
+  }
+}
+main .steps__section {
+  max-width: 900px;
+  padding: 128px 0px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+main .steps__section h2 {
+  color: #000000;
+  font-weight: 400;
+  font-size: min(48px, max(25px + 2vw));
+  line-height: 48px;
+  letter-spacing: 1px;
+  text-align: center;
+  margin: 0;
+}
+main .steps__section .steps__items {
+  margin: 86px 0px 46px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 97px;
+  text-align: center;
+}
+main .steps__section .steps__items .steps__item .icon {
+  margin-bottom: 16px;
+}
+main .steps__section .steps__items .steps__item h4 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 25px;
+  color: #18181B;
+}
+main .steps__section .steps__items .steps__item p {
+  margin-top: 18px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.2px;
+  color: #27272A;
+}
+main .steps__section a {
+  align-self: center;
+  color: #01271C;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.1px;
+  text-align: center;
+  background: #4CFDC7;
+  padding: 9px 33px;
+  text-decoration: none;
+  border-radius: 4px;
+}
+main .steps__section .steps__section__stars {
+  margin-top: 32px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  user-select: none;
+  color: #27272A;
+}
+@media screen and (max-width: 1024px) {
+  main .steps__section .steps__items {
+    gap: 60px;
+  }
+}
+@media screen and (max-width: 768px) {
+  main .steps__section .steps__items {
     flex-wrap: wrap;
+    gap: 30px;
+  }
+  main .steps__section .steps__items h4 {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 480px) {
+  main .steps__section {
+    padding: 128px 10px;
+  }
+  main .steps__section .steps__items {
+    margin-top: 48px;
+  }
+  main .steps__section .steps__items .steps__item {
+    gap: 18px;
+  }
+  main .steps__section .steps__items .steps__item .icon {
+    margin-bottom: 8px;
+  }
+  main .steps__section .steps__items .steps__item p {
+    font-size: 14px;
+  }
+}
+main .trade__section {
+  padding: 195px 0px 100px 10px;
+  border-bottom: 1px solid #D4D4D8;
+}
+main .trade__section .container h2 {
+  color: #000000;
+  font-size: min(46px, max(23px + 2vw));
+  font-weight: 400;
+  line-height: 48px;
+  letter-spacing: 1px;
+  margin: 0;
+}
+main .trade__section .container p {
+  max-width: 517px;
+  color: #27272A;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.2px;
+  margin: 24px 0px 30px 0px;
+}
+main .trade__section .container .trade__section__icons {
+  display: flex;
+  gap: 36px;
+}
+main .trade__section .container .trade__section__icons .icon a img {
+  display: block;
+}
+main .trade__section .container .trade__section__icons .icon .trade__stars {
+  margin: 18px 0px 34px 0px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  user-select: none;
+  color: #27272A;
+}
+main .trade__section .container a {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+  color: #18181B;
+  text-decoration: none;
+}
+@media screen and (max-width: 768px) {
+  main .trade__section {
+    padding-top: 100px;
+  }
+  main .trade__section .container p {
+    font-size: 14px;
+  }
+  main .trade__section .container .trade__section__icons {
+    justify-content: center;
+    gap: 14px;
+  }
+}
+@media screen and (max-width: 580px) {
+  main .trade__section .container .trade__section__icons {
+    gap: 7px;
+  }
+}
+main .news__section {
+  padding-top: 128px;
+}
+main .news__section h3 {
+  color: #18181B;
+  font-weight: 400;
+  font-size: min(31px, max(14px + 2vw));
+  line-height: 40px;
+  text-align: center;
+  letter-spacing: 0.1px;
+  margin: 0;
+}
+main .news__section .news__section__items {
+  margin: 64px 0px;
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+main .news__section .news__section__items .news__section__item {
+  max-width: 357px;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 16px rgba(9, 24, 26, 0.04);
+  border-radius: 8px;
+}
+main .news__section .news__section__items .news__section__item .news__section__info {
+  padding: 16px 16px;
+}
+main .news__section .news__section__items .news__section__item .news__section__info .news__section__info__date {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 12px;
+}
+main .news__section .news__section__items .news__section__item .news__section__info .news__section__info__date span:nth-child(1) {
+  background: #BDFFEB;
+  color: #18181B;
+  padding: 6px 8px;
+}
+main .news__section .news__section__items .news__section__item .news__section__info .news__section__info__date span:nth-child(2) {
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #18181B;
+}
+main .news__section .news__section__items .news__section__item .news__section__info h4 {
+  margin: 16px 0px 32px 0px;
+  max-width: 301px;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 30px;
+  color: #18181B;
+}
+main .news__section .news__section__items .news__section__item .news__section__info a {
+  color: #18181B;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  text-decoration: none;
+}
+main .news__section p {
+  color: #18181B;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 20px;
+  text-align: center;
+}
+main .news__section .news__section__links {
+  margin-top: 64px;
+  display: flex;
+  justify-content: center;
+  gap: 34px;
+  flex-wrap: wrap;
+}
+main .news__section .news__section__links .news__section__link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+main .news__section .news__section__links .news__section__link a {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #18181B;
+  text-decoration: none;
+}
+@media screen and (max-width: 580px) {
+  main .news__section .news__section__items .news__section__item .news__section__item__img img {
+    width: 100%;
+  }
+  main .news__section .news__section__items .news__section__item .news__section__info h4 {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 480px) {
+  main .news__section {
+    padding-top: 64px;
+  }
+  main .news__section .news__section__items .news__section__item .news__section__info .news__section__info__date {
+    font-size: 10px;
+  }
+}
+main .create__account__section {
+  margin-top: 235px;
+}
+main .create__account__section h2 {
+  margin: 235px 0px 37px 0px;
+  font-size: min(46px, max(23px + 2vw));
+  line-height: 48px;
+  letter-spacing: 1px;
+  color: #000000;
+  font-weight: 400;
+}
+main .create__account__section a {
+  background: #4CFDC7;
+  color: #01271C;
+  padding: 10px 33px;
+  border: 1px solid #4CFDC7;
+  border-radius: 4px;
+  text-decoration: none;
+}
+@media screen and (max-width: 580px) {
+  main .create__account__section {
+    margin-top: 100px;
+  }
+}
+@media screen and (max-width: 768px) {
+  main .markets__section,
+  main .template__section {
+    margin-bottom: 64px;
+  }
+  main .template__section .template__section__content h4 {
+    text-align: center;
+  }
+  main .markets__section .why__btc__markets .wbm__items {
+    gap: 32px;
+  }
+}
+
+footer .footer {
+  padding-top: 143px;
+}
+footer .footer .footer__items {
+  margin-top: 67px;
+  display: flex;
+  gap: 128px;
+}
+footer .footer .footer__items .footer__item h6 {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 12px;
+  color: #18181B;
+  letter-spacing: 1px;
+  margin: 0;
+}
+footer .footer .footer__items .footer__item .footer__item__links {
+  margin-top: 38px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+footer .footer .footer__items .footer__item .footer__item__links a {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 21px;
+  color: #3F3F46;
+  text-decoration: none;
+}
+footer .footer .footer__items .footer__item .footer__item__links .news__section__links {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+footer .footer .footer__items .footer__item .footer__item__links .news__section__links .news__section__link {
+  display: flex;
+  gap: 10px;
+}
+footer .footer .footer__footer {
+  margin: 137px 0px 65px 0px;
+  text-align: center;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 12px;
+  color: #27272A;
+}
+footer .footer .footer__footer .footer__footer__top {
+  display: flex;
+  justify-content: center;
+  gap: 21px;
+}
+footer .footer .footer__footer .footer__footer__top .contact {
+  letter-spacing: 1px;
+}
+@media screen and (max-width: 1024px) {
+  footer .footer .footer__items {
+    flex-wrap: wrap;
+    gap: 64px;
   }
 }
 
