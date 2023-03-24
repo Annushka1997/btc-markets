@@ -32,6 +32,24 @@ $tablePadding : 16px 0px;
 
 body {
 	font-family: "regular", sans-serif;
+
+	&::-webkit-scrollbar {
+		width: 8px;
+	}
+
+	&::-webkit-scrollbar-track {
+		background: #f1f1f1;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background: #888;
+		// background: $green;
+	}
+
+	&::-webkit-scrollbar-thumb:hover {
+		background: #555;
+		// background: #0ca874;;
+	}
 }
 
 .container {
@@ -75,8 +93,29 @@ nav {
 					list-style-type: none;
 
 					a {
+						position: relative;
 						color: $firstBlack;
 						text-decoration: none;
+						transition: 0.3s;
+
+						&::before {
+							content: "";
+							width: 0%;
+							height: 3px;
+							background: $primary;
+							position: absolute;
+							bottom: -10px;
+							border-radius: $br;
+							transition: 0.3s;
+						}
+
+						&:hover {
+							color: $primary;
+
+							&::before {
+								width: 100%;
+							}
+						}
 					}
 				}
 			}
@@ -91,22 +130,31 @@ nav {
 					cursor: pointer;
 					color: $firstBlack;
 					font-size: 12px;
+					transition: 0.3s;
 
 					&#login {
 						border: 1px solid $firstBlack;
 						background: transparent;
+
+						&:hover {
+							background: $greenBlack;
+							border-color: $greenBlack;
+							color: #fff;
+						}
 					}
 
 					&#signup {
 						border: 1px solid $primary;
 						background: $primary;
 						color: $greenBlack;
+
+						&:hover {
+							background: $green;
+							border-color: $green;
+							color: #fff;
+						}
 					}
 				}
-
-        .mobile__btns {
-          display: none;
-        }
 			}
 		}
 
@@ -152,17 +200,6 @@ nav {
 				.mobile__menu__btn {
 					display: block;
 				}
-
-        .nav__btns {
-          .full__btns {
-            display: none;
-          }
-
-          .mobile__btns {
-            display: block;
-          }
-
-        }
 			}
 		}
 
@@ -218,16 +255,29 @@ header {
 					padding: 9px 33px;
 					border-radius: $br;
 					text-decoration: none;
+					transition: 0.3s;
 
 					&:nth-child(1) {
 						background: $primary;
 						color: $greenBlack;
+
+						&:hover {
+							background: $green;
+							border-color: $green;
+							color: #fff;
+						}
 					}
 
 					&:nth-child(2) {
 						background: transparent;
 						color: $firstBlack;
 						border: 1px solid $firstBlack;
+
+						&:hover {
+							background: $greenBlack;
+							border-color: $greenBlack;
+							color: #fff;
+						}
 					}
 				}
 			}
@@ -251,11 +301,16 @@ header {
 			}
 		}
 
+		@media screen and (max-width: 800px) {
+			gap: 32px;
+		}
+
 		@media screen and (max-width: $mobileL) {
 			justify-content: center;
 			flex-wrap: wrap;
 			text-align: center;
 			padding-top: 65px;
+			gap: 64px;
 
 			.header__left {
 
@@ -293,6 +348,7 @@ header {
 main {
 	.markets__section {
 		margin-bottom: 128px;
+
 		.markets {
 			box-shadow: 0px 0px 16px rgba(9, 24, 26, 0.04);
 			border-radius: $br;
@@ -320,6 +376,24 @@ main {
 				overflow-y: hidden;
 				overflow-x: auto;
 
+				&::-webkit-scrollbar {
+					height: 8px;
+				}
+
+				&::-webkit-scrollbar-track {
+					background: #f1f1f1;
+				}
+
+				&::-webkit-scrollbar-thumb {
+					background: #888;
+					// background: $green;
+				}
+
+				&::-webkit-scrollbar-thumb:hover {
+					background: #555;
+					// background: #0ca874;;
+				}
+
 				table {
 					border-collapse: collapse;
 					width: 100%;
@@ -342,7 +416,6 @@ main {
 								font-weight: 400;
 
 								span {
-
 									&.aud {
 										color: $lightGray;
 										font-size: 14px;
@@ -366,6 +439,7 @@ main {
 
 								a {
 									display: block;
+									width: 54px;
 									text-decoration: none;
 									padding: $tablePadding;
 									background: $primary;
@@ -374,6 +448,14 @@ main {
 									cursor: pointer;
 									text-align: center;
 									font-size: 12px;
+									margin: 0px 0px 0px auto;
+									transition: 0.3s;
+
+									&:hover {
+										background: $green;
+										border-color: $green;
+										color: #fff;
+									}
 								}
 							}
 						}
@@ -426,7 +508,7 @@ main {
 
 			h2 {
 				text-align: center;
-				font-size: min(48px, max(25px + 2vw));
+				font-size: min(40px, max(20px + 2vw));
 				font-weight: 400;
 				margin: 0;
 			}
@@ -618,10 +700,9 @@ main {
 						h6 {
 							font-weight: 400;
 							font-size: 16px;
-					text-transform: capitalize;
-					margin: 0;
-						
-				}
+							text-transform: capitalize;
+							margin: 0;
+						}
 					}
 
 					@media screen and (max-width: $mobileL) {
@@ -635,6 +716,7 @@ main {
 					@media screen and (max-width: $mobileXS) {
 						.vip__program__item {
 							gap: 4px;
+
 							h6 {
 								font-size: 15px;
 							}
@@ -645,12 +727,19 @@ main {
 				a {
 					display: block;
 					text-decoration: none;
-					padding: 9px 36px;
+					padding: 9px 33px;
 					color: $firstBlack;
 					border: 1px solid $firstBlack;
 					border-radius: $br;
 					width: fit-content;
 					margin: 0px auto 64px auto;
+					transition: 0.3s;
+
+					&:hover {
+						background: $greenBlack;
+						border-color: $greenBlack;
+						color: #fff;
+					}
 				}
 			}
 
@@ -667,330 +756,332 @@ main {
 		}
 	}
 
-	.steps__section {
-		max-width: 900px;
-		padding: 122px 0px 128px 0px;
-		display: flex;
-		align-items: center;
-		flex-direction: column;
+	.tree__easy__steps__section {
+		padding-top: 128px;
+		padding-bottom: 128px;
 
-		h2 {
-			color: $nativeBlack;
-			font-weight: 400;
-			font-size: min(48px, max(25px + 2vw));
-			line-height: 48px;
-			letter-spacing: 1px;
-			text-align: center;
-			margin: 0;
+		@media screen and (max-width: $mobileL) {
+			padding-top: 64px;
+			padding-bottom: 64px;
 		}
 
-		.steps__items {
-			margin: 86px 0px 46px 0px;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			gap: 64px;
-			text-align: center;
+		.tree__easy__steps {
+			max-width: 900px;
+			margin: 0 auto;
 
-			.steps__item {
-				width: 260px;
+			h2 {
+				text-align: center;
+				font-size: min(40px, max(20px + 2vw));
+				font-weight: 400;
+				margin: 0px 0px 64px 0px;
+			}
+
+			.tree__easy__steps__items {
 				display: flex;
-				flex-direction: column;
-				align-items: center;
-				.icon {
-					width: fit-content;
-					margin-bottom: 16px;
-					background: #FCFBF8;
-					svg {
-						margin: 16px;
-					}
-				}
+				justify-content: center;
+				gap: 64px;
+				margin-bottom: 64px;
 
-				h4 {
-					margin: 0;
-					font-size: 20px;
-					font-weight: 400;
-					line-height: 25px;
-					color: $firstBlack;
-				}
+				.tree__easy__steps__item {
+					text-align: center;
+					width: 278px;
 
-				p {
-					margin-top: 18px;
-					font-weight: 400;
-					font-size: 16px;
-					line-height: 24px;
-					letter-spacing: 0.2px;
-					color: $secondBlack;
-					&:nth-child(2) {
-						font-size: 15px;
-					}
-				}
-			}	
-		}
-
-		a {
-			align-self: center;
-			color: $greenBlack;
-			font-weight: 400;
-			font-size: 16px;
-			line-height: 20px;
-			letter-spacing: 0.1px;
-			text-align: center;
-			background: $primary;
-			padding: 9px 33px;
-			text-decoration: none;
-			border-radius: $br;
-		}
-
-		.steps__section__stars {
-			margin-top: 32px;
-			display: flex;
-			align-items: center;
-			gap: 8px;
-			user-select: none;
-			color: $secondBlack;
-		}
-
-		@media screen and (max-width: $tablet) {
-			.steps__items {
-				gap: 60px;
-			}
-		}
-
-		@media screen and (max-width: $mobileM) {
-			.steps__items {
-				flex-wrap: wrap;
-				gap: 30px;
-
-				h4 {
-					font-size: 18px;
-				}
-			}
-		}
-
-		@media screen and (max-width: $mobileS) {
-			padding: 128px 10px;
-			.steps__items {
-				margin-top: 48px;
-				.steps__item {
-					gap: 18px;
 					.icon {
-						margin-bottom: 8px;
+						padding: 16px;
+						background: #FCFBF8;
+						width: 72px;
+						height: 72px;
+						border-radius: $br;
+						margin: 0 auto;
+					}
+
+					h6 {
+						font-weight: 400;
+						font-size: 20px;
+						text-transform: capitalize;
+						margin: 16px 0px;
 					}
 
 					p {
-						font-size: 14px;
-					}
-				}
-			}
-		}
-
-	}
-
-	.trade__section {
-		padding: 195px 0px 100px 10px;
-		border-bottom: 1px solid #D4D4D8;
-
-		.container {
-			h2 {
-				color: $nativeBlack;
-				font-size: min(46px, max(23px + 2vw));
-				font-weight: 400;
-				line-height: 48px;
-				letter-spacing: 1px;
-				margin: 0;
-			}
-	
-			p {
-				max-width: 517px;
-				color: $secondBlack;
-				font-weight: 400;
-				font-size: 16px;
-				line-height: 24px;
-				letter-spacing: 0.2px;
-				margin: 24px 0px 30px 0px;
-			}
-	
-	
-			.trade__section__icons {
-				display: flex;
-				gap: 36px;
-				.icon {
-					a {
-						img {
-							display: block;
-						}
-					}
-					
-					.trade__stars {
-						margin: 18px 0px 34px 0px;
-						display: flex;
-						align-items: center;
-						gap: 8px;
-						user-select: none;
 						color: $secondBlack;
+						line-height: 24px;
+						letter-spacing: 0.2px;
+						font-size: 15px;
 					}
 				}
+
+				@media screen and (max-width: $mobileL) {
+					flex-wrap: wrap;
+				}
+
+				@media screen and (max-width: $mobileM) {
+					gap: 32px;
+				}
 			}
-	
+
 			a {
-				font-size: 16px;
-				line-height: 20px;
-				font-weight: 400;
-				color: $firstBlack;
+				display: block;
 				text-decoration: none;
-			}
-	
-		}
+				padding: 9px 33px;
+				background: $primary;
+				color: $greenBlack;
+				width: fit-content;
+				border-radius: $br;
+				margin: 0 auto 32px auto;
+				transition: 0.3s;
 
-		@media screen and (max-width: $mobileL) {
-			padding-top: 100px;
-
-			.container {
-				p {
-					font-size: 14px;
-				}
-			
-				.trade__section__icons {
-					justify-content: center;
-					gap: 14px;
+				&:hover {
+					background: $green;
+					border-color: $green;
+					color: #fff;
 				}
 			}
-		}
 
-		@media screen and (max-width: $mobileM) {
-			.container {
-				.trade__section__icons {
-					gap: 7px;
-				}
+			.tree__easy__steps__stars {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				gap: 8px;
+				user-select: none;
+				color: $secondBlack;
 			}
 		}
-
 	}
 
-	.news__section {
-		padding-top: 128px;
-		h3 {
-			color: $firstBlack;
-			font-weight: 400;
-			font-size: min(31px, max(14px + 2vw));
-			line-height: 40px;
+	.trade__on__the__go {
+		h2 {
 			text-align: center;
-			letter-spacing: 0.1px;
-			margin: 0;
+			font-size: min(40px, max(20px + 2vw));
+			font-weight: 400;
+			margin: 0px 0px 32px 0px;
 		}
 
-		.news__section__items {
-			margin: 64px 0px;
+		p {
+			color: $secondBlack;
+			line-height: 24px;
+			letter-spacing: 0.2px;
+			font-size: 15px;
+			text-align: center;
+			max-width: 900px;
+			margin: 0 auto 32px auto;
+		}
+
+		.totg__store {
 			display: flex;
 			justify-content: center;
 			gap: 32px;
-			flex-wrap: wrap;
-			.news__section__item {
-				max-width: 357px;
-				background: #FFFFFF;
-				box-shadow: 0px 0px 16px rgba(9, 24, 26, 0.04);
-				border-radius: 8px;
-				.news__section__info {
-					padding: 16px 16px;
-					.news__section__info__date {
-						display: flex;
-						align-items: center;
-						text-align: center;
-						gap: 16px;
-						font-size: 12px;
-						font-weight: 400;
-						line-height: 12px;
-						span {
-							&:nth-child(1) {
-								background: #BDFFEB;
-								color: $firstBlack;
-								padding: 6px 8px;
-							}
 
-							&:nth-child(2) {
-								letter-spacing: 1px;
-								text-transform: uppercase;
-								color: $firstBlack;
+			@media screen and (max-width: $mobileM) {
+				flex-wrap: wrap;
+			}
+
+			.app__store,
+			.google__play {
+				img {
+					display: block;
+					width: 150px;
+					height: 50px;
+				}
+
+				.app__store__stars,
+				.google__play__stars {
+					display: flex;
+					gap: 8px;
+					margin-top: 16px;
+
+					img {
+						width: unset;
+						height: unset;
+					}
+				}
+			}
+		}
+
+		a {
+			display: block;
+			text-decoration: none;
+			padding: 9px 33px;
+			color: $firstBlack;
+			border: 1px solid $firstBlack;
+			border-radius: $br;
+			width: fit-content;
+			margin: 32px auto 0px auto;
+			transition: 0.3s;
+
+			&:hover {
+				background: $greenBlack;
+				border-color: $greenBlack;
+				color: #fff;
+			}
+		}
+	}
+
+	.latest__news__section {
+		padding-top: 128px;
+		padding-bottom: 128px;
+
+		@media screen and (max-width: $mobileL) {
+			padding-top: 64px;
+			padding-bottom: 64px;
+		}
+
+		h2 {
+			text-align: center;
+			font-size: min(40px, max(20px + 2vw));
+			font-weight: 400;
+			margin: 0px 0px 32px 0px;
+		}
+
+		.latest__news__items {
+			display: flex;
+			justify-content: space-between;
+			gap: 32px;
+			margin-bottom: 64px;
+
+			.latest__news__item {
+				box-shadow: 0px 0px 32px rgba(9, 24, 26, 0.1);
+				border-radius: 8px;
+				transition: all 0.3s;
+
+				.latest__news__item__cover {
+					max-width: 357px;
+					max-height: 148px;
+					overflow: hidden;
+
+					img {
+						display: block;
+						width: 100%;
+						height: 100%;
+						object-fit: cover;
+						transition: transform 0.3s;
+					}
+				}
+
+				.latest__news__item__date__status {
+					display: flex;
+					justify-content: space-between;
+					align-items: center;
+					margin: 16px 0px;
+					padding: 0px 16px;
+
+					@media screen and (max-width: $mobileXS) {
+						flex-wrap: wrap;
+
+						p {
+							width: 100%;
+							text-align: center;
+
+							&:first-child {
+								margin-bottom: 8px;
 							}
 						}
 					}
-				
-					h4 {
-						margin: 16px 0px 32px 0px;
-						max-width: 301px;
-						font-weight: 400;
-						font-size: 24px;
-						line-height: 30px;
+
+					p {
+						margin: 0;
 						color: $firstBlack;
+
+						&:first-child {
+							background: #BDFFEB;
+							padding: 6px;
+							border-radius: $br;
+							color: $greenBlack;
+							font-size: 15px;
+						}
 					}
-	
+				}
+
+				h4 {
+					font-size: min(24px, max(12px + 2vw));
+					margin: 0;
+					font-weight: 400;
+					max-width: 350px;
+					padding: 0px 16px;
+
 					a {
 						color: $firstBlack;
-						font-weight: 400;
-						font-size: 16px;
-						line-height: 20px;
 						text-decoration: none;
 					}
 				}
+
+				.read__more {
+					display: block;
+					margin-top: 16px;
+					text-decoration: none;
+					color: $firstBlack;
+					padding: 0px 16px 16px 16px;
+				}
+
+				&:hover {
+					box-shadow: 0px 0px 32px rgba(9, 24, 26, 0.3);
+
+					.latest__news__item__cover {
+						img {
+							transform: scale(1.1);
+						}
+					}
+
+					h4 {
+						a {
+							color: $greenBlack;
+						}
+					}
+
+					.read__more {
+						color: $green;
+					}
+				}
+			}
+
+			@media screen and (max-width: $tablet) {
+				flex-wrap: wrap;
+				justify-content: center;
 			}
 		}
-		
-		p {
-			color: $firstBlack;
-			font-weight: 400;
-			font-size: 15px;
-			line-height: 20px;
+
+		.check__out__link {
+			display: block;
+			text-decoration: none;
 			text-align: center;
+			color: $firstBlack;
+			margin-bottom: 64px;
+
+			&:hover {
+				text-decoration: underline;
+			}
 		}
 
-		.news__section__links {
-			margin-top: 64px;
+		.social {
 			display: flex;
 			justify-content: center;
-			gap: 34px;
-			flex-wrap: wrap;
-			.news__section__link {
+			gap: 32px;
+			align-items: center;
+
+			@media screen and (max-width: $mobileL) {
+				flex-wrap: wrap;
+			}
+
+			a {
 				display: flex;
 				align-items: center;
 				gap: 10px;
+				text-decoration: none;
+				font-size: 16px;
+				color: $firstBlack;
+				transition: 0.3s;
 
-				a {
-					font-weight: 400;
-					font-size: 16px;
-					line-height: 20px;
-					color: $firstBlack;
-					text-decoration: none;
-				}
-			}
-		}
-
-		@media screen and (max-width: $mobileM) {
-			.news__section__items {
-				.news__section__item {
-					.news__section__item__img {
-						img {
-							width: 100%;
-						}
-					}
-
-					.news__section__info {
-						h4 {
-							font-size: 18px;
-						}
+				svg {
+					path {
+						transition: 0.3s;
 					}
 				}
-			}
-		}
 
-		@media screen and (max-width: $mobileS) {
-			padding-top: 64px;
+				&:hover {
+					color: $green;
 
-			.news__section__items {
-				.news__section__item {
-					.news__section__info {
-						.news__section__info__date {
-							font-size: 10px;
+					svg {
+						path {
+							fill: $green;
 						}
 					}
 				}
@@ -998,39 +1089,42 @@ main {
 		}
 	}
 
-	.create__account__section {
-		margin-top: 235px;
+	.before__footer {
 		h2 {
-			margin: 235px 0px 37px 0px;
-			font-size: min(46px, max(23px + 2vw));
-			line-height: 48px;
-			letter-spacing: 1px;
-			color: $nativeBlack;
+			text-align: center;
+			font-size: min(40px, max(20px + 2vw));
 			font-weight: 400;
+			margin: 0px auto 32px auto;
+			max-width: 420px;
 		}
 
 		a {
+			display: block;
+			text-decoration: none;
+			padding: 9px 33px;
 			background: $primary;
 			color: $greenBlack;
-			padding: 10px 33px;
-			border: 1px solid $primary;
+			width: fit-content;
 			border-radius: $br;
-			text-decoration: none;
-		}
+			margin: 0 auto 32px auto;
+			transition: 0.3s;
 
-		@media screen and (max-width: $mobileM){
-			margin-top: 100px;
+			&:hover {
+				background: $green;
+				border-color: $green;
+				color: #fff;
+			}
 		}
 	}
 
 	@media screen and (max-width: $mobileL) {
-
-		.markets__section,
-		.template__section {
+		.markets__section {
 			margin-bottom: 64px;
 		}
 
 		.template__section {
+			margin-bottom: 64px;
+
 			.template__section__content {
 				h4 {
 					text-align: center;
@@ -1045,75 +1139,124 @@ main {
 				}
 			}
 		}
-	}	
+	}
 }
 
 footer {
+	margin-top: 128px;
+
 	.footer {
-		padding-top: 143px;
-		.footer__items {
-			margin-top: 67px;
-			display: flex;
-			gap: 128px;
-			.footer__item {				
-				h6 {
-					font-weight: 400;
-					font-size: 12px;
-					line-height: 12px;
-					color: $firstBlack;
-					letter-spacing: 1px;
-					margin: 0;
-				}
+		display: flex;
+		gap: 64px;
 
+		.footer__item {
+			flex: 1 1 227px;
 
-				.footer__item__links {
-					margin-top: 38px;
-					display: flex;
-					flex-direction: column;
-					gap: 16px;
+			h4 {
+				margin-top: 0;
+				margin-bottom: 32px;
+				color: $firstBlack;
+				font-weight: 400;
+				font-size: 16px;
+			}
+
+			ul {
+				li {
+					list-style-type: none;
+
 					a {
-						font-weight: 400;
-						font-size: 12px;
-						line-height: 21px;
-						color: $footerBlack;
+						display: block;
 						text-decoration: none;
+						color: $footerBlack;
+						margin-bottom: 16px;
+
+						svg {
+							path {
+								fill: $footerBlack;
+							}
+						}
+
+						&:hover {
+							text-decoration: underline;
+						}
 					}
 
-					.news__section__links {
-						display: flex;
-						flex-direction: column;
-						gap: 16px;
-						.news__section__link {
-							display: flex;
-							gap: 10px;
-						}
+					img {
+						width: 120px;
+						height: 40px;
+						display: block;
 					}
 				}
 			}
- 		}
 
-		.footer__footer {
-			margin: 137px 0px 65px 0px;
-			text-align: center;
-			font-weight: 400;
-			font-size: 12px;
-			line-height: 12px;
-			color: $secondBlack;
-			.footer__footer__top {
-				display: flex;
-				justify-content: center;
-				gap: 21px;
-				.contact {
-					letter-spacing: 1px;
+			&:nth-child(4) {
+				li {
+					a {
+						display: flex;
+						align-items: center;
+						gap: 8px;
+					}
 				}
 			}
 		}
 
 		@media screen and (max-width: $tablet) {
-			.footer__items {
-				flex-wrap: wrap;
-				gap: 64px;
+			flex-wrap: wrap;
+		}
+
+		@media screen and (max-width: $mobileL) {
+			text-align: center;
+
+			.footer__item {
+				flex: 1 1 100%;
+
+				li {
+					img {
+						margin: 0px auto 8px auto;
+					}
+				}
+
+				&:nth-child(4) {
+					li {
+						a {
+							justify-content: center;
+						}
+					}
+				}
 			}
+		}
+	}
+
+	.footer__info {
+		text-align: center;
+		font-size: 14px;
+		color: $secondBlack;
+		margin-top: 128px;
+		margin-bottom: 64px;
+
+		p {
+			margin: 0;
+		}
+
+		.footer__info__top {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 32px;
+			margin-bottom: 16px;
+
+			@media screen and (max-width: $mobileL) {
+				flex-wrap: wrap;
+				gap: 16px;
+
+				p {
+					width: 100%;
+				}
+			}
+		}
+
+		.footer__info__bottom {
+			font-size: 12px;
 		}
 	}
 }
